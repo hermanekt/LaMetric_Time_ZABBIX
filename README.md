@@ -1,4 +1,7 @@
 # LaMetric_Time_ZABBIX
+
+![alt LaMetric_Time_ZABBIX](https://github.com/hermanekt/LaMetric_Time_ZABBIX/raw/master/howto/LaMetric_Zabbix.gif)
+
 This is repo for La Metric display plugin. (public api version)
 
 Howto install:
