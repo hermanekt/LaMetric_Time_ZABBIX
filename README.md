@@ -39,3 +39,13 @@ LAMETRIC_ACCESS_TOKEN='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 (4/4) Install your app in LaMetric Time - follow this video:
 
 [![Alt text](https://img.youtube.com/vi/CIDScOpNKLg/0.jpg)](https://www.youtube.com/watch?v=CIDScOpNKLg)
+
+DONE!
+
+## Authors
+
+* **Tomas Hermanek** - *Initial work* - [hermanekt](https://github.com/hermanekt)
+
+## Acknowledgments
+
+### Please give me feadback if you find bug or need some another thinks. Email is info"@"tomashermanek.cz, twitter is: hermanekt.
