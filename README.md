@@ -7,7 +7,7 @@
 * Howto install:
 
 La Metric
-1) login https://developer.lametric.com/
+1) login https://developer.lametric.com/ and follow this video:
 
 [![Alt text](https://img.youtube.com/vi/Cv3dO27zAGo/0.jpg)](https://www.youtube.com/watch?v=Cv3dO27zAGo)
 
