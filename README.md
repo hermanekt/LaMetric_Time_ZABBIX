@@ -29,6 +29,10 @@ LAMETRIC_DEVELOPER_URL='https://developer.lametric.com/api/v1/dev/widget/update/
 LAMETRIC_ACCESS_TOKEN='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 2) Set new Action in zabbix fronted (run script on zabbix server)
+follow this video:
+
+[![Alt text](https://img.youtube.com/vi/qvIWWdYpcLI/0.jpg)](https://www.youtube.com/watch?v=qvIWWdYpcLI)
+
 * /etc/zabbix/lametric.sh {EVENT.NAME} {EVENT.SEVERITY} Problem
 * /etc/zabbix/lametric.sh {EVENT.NAME} {EVENT.SEVERITY} OK
 
