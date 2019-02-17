@@ -6,13 +6,13 @@
 
 * Howto install:
 
-La Metric
+(1/4) La Metric
 1) login https://developer.lametric.com/ and follow this video:
 
 [![Alt text](https://img.youtube.com/vi/Cv3dO27zAGo/0.jpg)](https://www.youtube.com/watch?v=Cv3dO27zAGo)
 
 
-Zabbix:
+(2/4) Zabbix:
 1) log in zabbix server and download lametric script and set permissions
 ```
 wget -O /etc/zabbix/lametric.sh https://raw.githubusercontent.com/hermanekt/LaMetric_Time_ZABBIX/master/lametric.sh
@@ -28,11 +28,14 @@ nano /etc/zabbix/lametric.sh
 LAMETRIC_DEVELOPER_URL='https://developer.lametric.com/api/v1/dev/widget/update/com.lametric.YOUR_APP_ID'
 LAMETRIC_ACCESS_TOKEN='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
-2) Set new Action in zabbix fronted (run script on zabbix server)
-follow this video:
+
+(3/4) Set new Action in zabbix fronted (run script on zabbix server) - follow this video:
 
 [![Alt text](https://img.youtube.com/vi/qvIWWdYpcLI/0.jpg)](https://www.youtube.com/watch?v=qvIWWdYpcLI)
 
 * /etc/zabbix/lametric.sh "{EVENT.NAME}" "{EVENT.SEVERITY}" Problem
 * /etc/zabbix/lametric.sh "{EVENT.NAME}" "{EVENT.SEVERITY}" OK
 
+(4/4) Install your app in LaMetric Time - follow this video:
+
+[![Alt text](https://img.youtube.com/vi/CIDScOpNKLg/0.jpg)](https://www.youtube.com/watch?v=CIDScOpNKLg)
