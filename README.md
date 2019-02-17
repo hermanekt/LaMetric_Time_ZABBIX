@@ -6,6 +6,12 @@
 
 * Howto install:
 
+La Metric
+1) login https://developer.lametric.com/
+
+[![Alt text](https://img.youtube.com/vi/Cv3dO27zAGo/0.jpg)](https://www.youtube.com/watch?v=Cv3dO27zAGo)
+
+
 Zabbix:
 1) log in zabbix server and download lametric script and set permissions
 ```
