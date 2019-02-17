@@ -15,8 +15,8 @@
 #Unknown=a27028
 
 # Lametric developer URL and token
-LAMETRIC_DEVELOPER_URL='https://developer.lametric.com/api/v1/dev/widget/update/com.lametric.cbe695a40cf5a1b4f1349ddef5c76c0d/1'
-LAMETRIC_ACCESS_TOKEN='YjQ3MTJmZTdhMzI4ZDhkODk4MThhZjBkY2RmMTA4MjA3M2Y5MTgxMDY5N2UxOGIxNDNkMWVhZmM4MmIzZTkwZA=='
+LAMETRIC_DEVELOPER_URL='https://developer.lametric.com/api/v1/dev/widget/update/com.lametric.YOUR_APP_ID'
+LAMETRIC_ACCESS_TOKEN='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
 # If message is not set print not set
 if [ -z "$1" ]; then 
@@ -61,11 +61,8 @@ fi
 #Default icon and text
 json1='{"frames": [{"text": "'
 json2='","icon": '
-#json3=',"index": 0}]}'
 json3='}]}'
-#message=$json1$MESSAGE_TEXT$json2$SEVERITY_ICON$json3
-# {"frames": [{"text": "pozor chlup!","icon": "a27031"}]}
-message='{ "model": { "frames": [ { "text": "pozor chlup2", "icon": "a27031" } ], "sound": { "category":"notifications", "id":"cat", "repeat":1 }, "cycles":"2" } }'
+message=$json1$MESSAGE_TEXT$json2$SEVERITY_ICON$json3
 
 #You can uncoment for debug.
 echo $message
@@ -75,5 +72,4 @@ curl -X POST \
 -H "X-Access-Token: $LAMETRIC_ACCESS_TOKEN" \
 -H "Cache-Control: no-cache" \
 -d "`echo $message`" \
-$LAMETRIC_DEVELOPER_URL	
-
+$LAMETRIC_DEVELOPER_URL
