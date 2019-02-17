@@ -33,6 +33,6 @@ follow this video:
 
 [![Alt text](https://img.youtube.com/vi/qvIWWdYpcLI/0.jpg)](https://www.youtube.com/watch?v=qvIWWdYpcLI)
 
-* /etc/zabbix/lametric.sh {EVENT.NAME} {EVENT.SEVERITY} Problem
-* /etc/zabbix/lametric.sh {EVENT.NAME} {EVENT.SEVERITY} OK
+* /etc/zabbix/lametric.sh "{EVENT.NAME}" "{EVENT.SEVERITY}" Problem
+* /etc/zabbix/lametric.sh "{EVENT.NAME}" "{EVENT.SEVERITY}" OK
 
