@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# https://github.com/hermanekt/LaMetric_Time_ZABBIX
+# info@tomashermanek.cz
+
 # Usage PROBLEM ./lametric.sh "DB si Down" "Warning" "PROBLEM"
 # Usage OK ./lametric.sh "DB si Down" "Warning" "OK"
 
