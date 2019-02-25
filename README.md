@@ -2,7 +2,7 @@
 
 ![alt LaMetric_Time_ZABBIX](https://github.com/hermanekt/LaMetric_Time_ZABBIX/raw/master/howto/LaMetric_Zabbix.gif)
 
-* This is repo for La Metric Zabbix app. (public api version)
+* This is the repository for La Metric Zabbix app. (public api version)
 
 * Howto install:
 
@@ -13,14 +13,14 @@
 
 
 (2/4) Zabbix:
-1) log in zabbix server and download lametric script and set permissions
+1) login to zabbix server, download lametric script and set permissions
 ```
 wget -O /etc/zabbix/lametric.sh https://raw.githubusercontent.com/hermanekt/LaMetric_Time_ZABBIX/master/lametric.sh
 ```
 ```
 chown zabbix:zabbix /etc/zabbix/lametric.sh && chmod +x /etc/zabbix/lametric.sh
 ```
-2) Change in script 2 variables(can be found in https://developer.lametric.com/applications/list):
+2) Change 2 variables in the script (can be found in https://developer.lametric.com/applications/list):
 ```
 nano /etc/zabbix/lametric.sh
 ```
@@ -29,14 +29,14 @@ LAMETRIC_DEVELOPER_URL='https://developer.lametric.com/api/v1/dev/widget/update/
 LAMETRIC_ACCESS_TOKEN='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
-(3/4) Set new Action in zabbix fronted (run script on zabbix server) - follow this video:
+(3/4) Set new Action in zabbix frontend (run script on zabbix server) - follow this video:
 
 [![Alt text](https://img.youtube.com/vi/qvIWWdYpcLI/0.jpg)](https://www.youtube.com/watch?v=qvIWWdYpcLI)
 
 * /etc/zabbix/lametric.sh "{EVENT.NAME}" "{EVENT.SEVERITY}" Problem
 * /etc/zabbix/lametric.sh "{EVENT.NAME}" "{EVENT.SEVERITY}" OK
 
-(4/4) Install your app in LaMetric Time - follow this video:
+(4/4) Install your app to LaMetric Time - follow this video:
 
 [![Alt text](https://img.youtube.com/vi/CIDScOpNKLg/0.jpg)](https://www.youtube.com/watch?v=CIDScOpNKLg)
 
