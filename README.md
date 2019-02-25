@@ -15,7 +15,7 @@
 (2/4) Zabbix:
 1) log in zabbix server and download lametric script and set permissions
 ```
-wget -O /etc/zabbix/lametric.sh https:display//raw.githubusercontent.com/hermanekt/LaMetric_Time_ZABBIX/master/lametric.sh
+wget -O /etc/zabbix/lametric.sh https://raw.githubusercontent.com/hermanekt/LaMetric_Time_ZABBIX/master/lametric.sh
 ```
 ```
 chown zabbix:zabbix /etc/zabbix/lametric.sh && chmod +x /etc/zabbix/lametric.sh
