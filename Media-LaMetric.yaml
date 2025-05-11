@@ -1,0 +1,100 @@
+zabbix_export:
+  version: '7.0'
+  media_types:
+    - name: LaMetric
+      type: WEBHOOK
+      parameters:
+        - name: icon_average
+          value: a27033
+        - name: icon_disaster
+          value: a27003
+        - name: icon_high
+          value: a27034
+        - name: icon_information
+          value: a27031
+        - name: icon_not_classified
+          value: a27030
+        - name: icon_ok
+          value: a27046
+        - name: icon_unknown
+          value: a27028
+        - name: icon_warning
+          value: a27032
+        - name: message
+          value: '{ALERT.MESSAGE}'
+        - name: severity
+          value: '{EVENT.SEVERITY}'
+        - name: token
+          value: <your_token>
+        - name: url
+          value: <your_url>
+      max_sessions: '0'
+      script: |
+        try {
+          var params = JSON.parse(value);
+          var iconMap = {
+            'Not classified': params.icon_not_classified,
+            'Information': params.icon_information,
+            'Warning': params.icon_warning,
+            'Average': params.icon_average,
+            'High': params.icon_high,
+            'Disaster': params.icon_disaster,
+            'OK': params.icon_ok,
+            'Unknown': params.icon_unknown
+          };
+          
+          var icon = iconMap[params.severity] || params.icon_unknown;
+        
+          var payload = JSON.stringify({
+            frames: [{
+              text: params.message,
+              icon: icon,
+              index: 0
+            }]
+          });
+        
+          var request = new HttpRequest();
+          request.addHeader('Accept: application/json');
+          request.addHeader('X-Access-Token: ' + params.token);
+          request.addHeader('Cache-Control: no-cache');
+        
+          var response = request.post(params.url, payload);
+        
+          if (request.getStatus() !== 200) {
+            throw 'Request failed with status code ' + request.getStatus() + ': ' + response;
+          }
+        
+          return 'OK';
+        } catch (error) {
+          Zabbix.log(4, '[ LaMetric Webhook ] Notification failed: ' + error);
+          throw 'LaMetric notification failed: ' + error;
+        }
+      description: |
+        Webhook integration with LaMetric Time.
+        
+        Needs to be configured in media template parameters:
+        Access Token from LaMetric.
+        Webhook URL from LaMetric.
+
+        More of our templates can be found on https://git.initmax.cz/initMAX-Public/zabbix-templates
+        Developed by initMAX s.r.o.
+        https://www.initmax.com
+      message_templates:
+        - event_source: TRIGGERS
+          operation_mode: PROBLEM
+          subject: 'Problem: {EVENT.NAME}'
+          message: |
+            {EVENT.NAME} on {HOST.NAME}
+            Severity: {EVENT.SEVERITY}
+        - event_source: TRIGGERS
+          operation_mode: RECOVERY
+          subject: 'Resolved: {EVENT.NAME}'
+          message: |
+            Resolved: {EVENT.NAME} on {HOST.NAME}
+            Severity was: {EVENT.SEVERITY}
+        - event_source: TRIGGERS
+          operation_mode: UPDATE
+          subject: 'Updated: {EVENT.NAME}'
+          message: |
+            Update: {EVENT.NAME} on {HOST.NAME}
+            Current status: {EVENT.STATUS}, acknowledged: {EVENT.ACK.STATUS}
